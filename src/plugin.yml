@@ -1,0 +1,5 @@
+name: LilyStatus
+main: me.shawshark.lilystatus.LilyStatus
+version: 1.0
+
+depend: [LilyPad-Connect]
