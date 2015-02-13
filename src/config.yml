@@ -1,0 +1,21 @@
+#Scoreboard format
+format: '&b{server}'
+
+#fresh time for the scoreboard
+refresh-time: '5'
+
+#scoreboard title.
+scoreboard-title: '&aStatus'
+
+# show scoreboard in this server?
+show-scoreboard: false 
+
+#remove offline servers from the scoreboard.
+remove-offline-server: false
+
+#servers that are only allowed to be shown in the scoreboard.
+allowed-servers:
+- creative
+- survival
+- factions
+- survivalgames
