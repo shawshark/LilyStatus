@@ -16,19 +16,21 @@ import me.shawshark.lilystatus.server.LilyServer;
 public class Updater extends BukkitRunnable {
 	
 	@Getter@Setter private ScoreBoardManager manager;
+	@Getter@Setter private ScoreboardManager scoreboard;
+	@Getter@Setter private Scoreboard sb;
+	@Getter@Setter private Objective ob;
 	
 	public Updater(ScoreBoardManager manager) {
 		setManager(manager);
+		setScoreboard(getManager().getInstance().getServer().getScoreboardManager());
+		setSb(scoreboard.getNewScoreboard());
+		setOb(sb.registerNewObjective("Scoreboard", "dummy"));
 		runTaskTimer(manager.getInstance(), manager.getRefresh() * 20, manager.getRefresh() * 20);
 	}
 
 	@Override
-	public void run() {
+	public void run() {		
 		
-		ScoreboardManager scoreboard = getManager().getInstance().getServer().getScoreboardManager();
-		final Scoreboard sb = scoreboard.getNewScoreboard();
-		
-		final Objective ob = sb.registerNewObjective("Scoreboard", "dummy");
 		ob.setDisplayName(ChatColor.translateAlternateColorCodes('&', getManager().getScoreboardTitle()));
 		ob.setDisplaySlot(DisplaySlot.SIDEBAR);
 		
