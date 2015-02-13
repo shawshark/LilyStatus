@@ -21,8 +21,8 @@ public class LilyStatus extends JavaPlugin {
 		
 		setConnect(getServer().getServicesManager().getRegistration(Connect.class).getProvider());
 		getConnect().registerEvents(new LilyListener(this));
-        setManager(new ScoreBoardManager(this));
-        setCoreManager(new CoreManager(this));
+	 	setManager(new ScoreBoardManager(this));
+        	setCoreManager(new CoreManager(this));
 	}
 	
 	public void onDisable() {
